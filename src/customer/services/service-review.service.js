@@ -1,7 +1,7 @@
 import http from '../../core/http-common'
 
 class ServiceReviewService {
-    endPoint = 'https://go2climbisw22.azurewebsites.net/api/v1/servicereviews';
+    endPoint = 'https://localhost:44398/api/v1/servicereviews';
 
     create(createServiceReview) {
         return http.post(this.endPoint, createServiceReview);

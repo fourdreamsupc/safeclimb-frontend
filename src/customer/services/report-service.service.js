@@ -1,7 +1,7 @@
 import http from '../../core/http-common'
 
 class ReportServiceService {
-    endPoint = 'https://go2climbisw22.azurewebsites.net/api/v1/reports';
+    endPoint = 'https://localhost:44398/api/v1/reports';
 
     create(createReport) {
         return http.post(this.endPoint, createReport);

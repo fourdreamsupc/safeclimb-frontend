@@ -2,23 +2,21 @@
 import axios from 'axios';
 
 //ENDPOINT
-const API_URL = 'https://go2climbisw22.azurewebsites.net/api/v1/users/auth/sign-in/';
-const API_SIGN_UP_CUSTOMER = 'https://go2climbisw22.azurewebsites.net/api/v1/customers/auth/sign-up/';
-const API_SIGN_UP_AGENCY = 'https://go2climbisw22.azurewebsites.net/api/v1/agencies/auth/sign-up/';
+const API_URL = 'https://localhost:44398/api/v1/users/auth/sign-in/';
+const API_SIGN_UP_CUSTOMER = 'https://localhost:44398/api/v1/customers/auth/sign-up/';
+const API_SIGN_UP_AGENCY = 'https://localhost:44398//api/v1/agencies/auth/sign-up/';
 class AuthService {
     //EJECUTA EL PROCESO DE LOGIN DADO UN USUARIO INGRESADO
-    login(user) {
-        return axios.post(API_URL, {
+    async login(user) {
+        const response = await axios.post(API_URL, {
             email: user.email,
             password: user.password
-        })
-            .then(response => {
-                if (response.data.token) {
-                    console.log("user:" + response.data);
-                    localStorage.setItem('user', JSON.stringify(response.data));
-                }
-                return response.data;
-            });
+        });
+        if (response.data.token) {
+            console.log("user:" + response.data);
+            localStorage.setItem('user', JSON.stringify(response.data));
+        }
+        return response.data;
     }
     //ELIMINA EL USUARIO DEL NAVEGADOR
     logout() {
