@@ -53,8 +53,6 @@ export default {
     service: [],
     headers: [
       {text: 'N° transaction', align: 'start', value: 'id'},
-      { text: 'Contracted service', align: 'start', value: 'service.name'},
-      { text: 'Total cost', align: 'start', value: `service.price`},
       { text: 'Service status', align: 'start', value: 'status'},
       { text: 'Service actions', align: 'start', value: 'actions'}
     ],
@@ -63,6 +61,7 @@ export default {
     retrieveHiredServices(){
       CustomersService.getHiredServicesByCustomerIdWithServiceInformation(this.$store.state.auth.user.id)
         .then(response => {
+          console.log(this.$store.state.auth.user.id)
           this.hiredServices = response.data;
         })
         .catch(e => {

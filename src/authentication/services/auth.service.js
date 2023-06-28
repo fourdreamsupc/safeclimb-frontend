@@ -2,9 +2,9 @@
 import axios from 'axios';
 
 //ENDPOINT
-const API_URL = 'https://localhost:44398/api/v1/users/auth/sign-in/';
-const API_SIGN_UP_CUSTOMER = 'https://localhost:44398/api/v1/customers/auth/sign-up/';
-const API_SIGN_UP_AGENCY = 'https://localhost:44398//api/v1/agencies/auth/sign-up/';
+const API_URL = 'https://safeclimb-security-services.azurewebsites.net/api/v1/users/auth/sign-in';
+const API_SIGN_UP_CUSTOMER = 'https://safeclimb-api-management.azure-api.net/profile/api/v1/customers/auth/sign-up/';
+const API_SIGN_UP_AGENCY = 'https://safeclimb-api-management.azure-api.net/profile/api/v1/agencies/auth/sign-up/';
 class AuthService {
     //EJECUTA EL PROCESO DE LOGIN DADO UN USUARIO INGRESADO
     async login(user) {
@@ -12,6 +12,7 @@ class AuthService {
             email: user.email,
             password: user.password
         });
+        console.log("user:" + response.data);
         if (response.data.token) {
             console.log("user:" + response.data);
             localStorage.setItem('user', JSON.stringify(response.data));

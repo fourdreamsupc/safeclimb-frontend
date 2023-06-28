@@ -2,7 +2,7 @@ import http from '../../core/http-common'
 import authHeader from "../../authentication/services/auth.header";
 
 class CustomersService {
-    endPoint = 'https://localhost:44398/api/v1/customers';
+    endPoint = 'https://safeclimb-api-management.azure-api.net/profile/api/v1/customers';
 
     getAll() {
         return http.get(this.endPoint,{ headers: authHeader()});
@@ -10,8 +10,9 @@ class CustomersService {
     getById(id) {
         return http.get(`${this.endPoint}/${id}`,{ headers: authHeader()});
     }
+    //check this one
     getHiredServicesByCustomerIdWithServiceInformation(id) {
-        return http.get(`${this.endPoint}/${id}/hiredservices/information?expand=service`,{ headers: authHeader()});
+        return http.get(`https://safeclimb-api-management.azure-api.net/booking/api/v1/hiredservice/customers/${id}/hiredservice`);
     }
     create(createCustomerDto) {
         return http.post(this.endPoint, createCustomerDto,{ headers: authHeader()});

@@ -1,7 +1,7 @@
 import http from '../../core/http-common'
 
 class HiredService {
-    endPoint = 'https://localhost:44398/api/v1/hiredservice';
+    endPoint = 'https://safeclimb-api-management.azure-api.net/booking/api/v1/hiredservice';
 
     getAll() {
         return http.get(this.endPoint);

@@ -37,11 +37,7 @@ export default {
   data: () => ({
     errors: [],
     headers: [
-      {text: 'Name and lastname', align: 'start', value: 'customer.name', groupable: false},
-      {text: 'Email', align: 'left', value: 'customer.email', sortable: false, groupable: false},
-      {text: 'Phone', align: 'left', value: 'customer.phoneNumber', sortable: false, groupable: false},
       {text: 'Quantity (people)', align: 'left', value: 'amount', groupable: false},
-      {text: 'Service', align: 'left', value: 'service.name'},
       {text: 'Departure date', align: 'left', value: 'scheduledDate', groupable: false},
       {text: 'Mount', align: 'left', value: 'price', groupable: false},
       {text: 'Status', align: 'left', value: 'status', groupable: false},

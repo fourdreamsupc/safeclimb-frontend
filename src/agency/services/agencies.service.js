@@ -1,7 +1,7 @@
 import http from '../../core/http-common'
 
 class AgenciesService {
-    endPoint = 'https://localhost:44398/api/v1/agencies';
+    endPoint = 'https://safeclimb-api-management.azure-api.net/profile/api/v1/agencies';
 
     getAll() {
         return http.get(this.endPoint);
@@ -10,11 +10,13 @@ class AgenciesService {
         return http.get(`${this.endPoint}/${id}`);
     }
     getServices(id) {
-        return http.get(`${this.endPoint}/${id}/services`);
+        return http.get(`https://safeclimb-api-management.azure-api.net/booking/api/v1/services/agencies/${id}/services`);
     }
+    //ignore
     getServiceOffer(id) {
         return http.get(`${this.endPoint}/${id}/services?isOffer=1`);
     }
+    //ignore
     getReviews(id) {
         return http.get(`${this.endPoint}/${id}/agencyreviews`); //agencyreviews en el backend
     }

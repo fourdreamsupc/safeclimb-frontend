@@ -6,8 +6,8 @@ class HiredService {
     getAll() {
         return http.get(this.endPoint);
     }
-    getExtendInformation(agencyId, category) {
-        return http.get(`https://localhost:44398/api/v1/agencies/${agencyId}/hiredservices?expand=${category}`);
+    getExtendInformation(agencyId) {
+        return http.get(`https://safeclimb-api-management.azure-api.net/booking/api/v1/hiredservice/agencies/${agencyId}/hiredservice`);
     }
     getById(id) {
         return http.get(`${this.endPoint}/${id}`);

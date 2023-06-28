@@ -1,7 +1,7 @@
 import http from '../../core/http-common'
 
 class ServicesService {
-    endPoint = 'https://localhost:44398/api/v1/services';
+    endPoint = 'https://safeclimb-api-management.azure-api.net/booking/api/v1/services';
     getAll() {
         return http.get(`${this.endPoint}`);
     }
@@ -17,6 +17,7 @@ class ServicesService {
     getByAllFilter(name, score, min, max, start, limit) {
         return http.get(`${this.endPoint}/services/text/${name}/score/${score}/money?min=${min}&max=${max}&start=${start}&limit=${limit}`);
     }
+    //check these ones
     getWithServiceReviews(id) {
         return http.get(`${this.endPoint}/${id}/servicereviews`);
     }

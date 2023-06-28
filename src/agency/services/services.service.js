@@ -1,7 +1,7 @@
 import http from '../../core/http-common'
 
 class ServicesService {
-    endPoint = 'https://localhost:44398/api/v1/services';
+    endPoint = 'https://safeclimb-api-management.azure-api.net/booking/api/v1/services';
 
     getAll() {
         return http.get(this.endPoint);
@@ -19,7 +19,7 @@ class ServicesService {
         return http.post(this.endPoint, createServiceDto);
     }
     createActivity(createActivityDto) {
-        return http.post(`https://localhost:44398/api/v1/activities`, createActivityDto);
+        return http.post(`https://safeclimb-api-management.azure-api.net/management/api/v1/activities`, createActivityDto);
     }
     update(id, updateServiceDto) {
         return http.put(`${this.endPoint}/${id}`, updateServiceDto);

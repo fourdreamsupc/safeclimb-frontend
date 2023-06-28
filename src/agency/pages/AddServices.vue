@@ -9,7 +9,7 @@
             <v-row>
               <v-col cols="4" class="px-0">
                 <v-card class="rounded-l-xl rounded-r-0 pr-0 img mr-0">
-                  <img height="100% ma-0" class="rounded-r-0 rounded-l-xl" :src="newService.photos" alt="">
+                  <img height="100% ma-0" class="rounded-r-0 rounded-l-xl" src="https://theperfectroundgolf.com/wp-content/uploads/2022/04/placeholder.png" alt="">
                 </v-card>
               </v-col>
               <v-col cols="8" class="pl-0">
